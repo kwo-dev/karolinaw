@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[NAME AND SURNAME] - Real Estate & Finance Expert</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #007bff; /* A modern accent color */
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0 60px; /* Adjusted padding for fixed header */
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: #333;
+            position: relative;
+        }
+
+        /* Underline effect for section titles */
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #007bff;
+            margin: 8px auto 0;
+        }
+
+        #hero {
+            background: #007bff; /* Primary accent color for hero */
+            color: #fff;
+            text-align: center;
+            padding: 120px 0 100px; /* Adjusted padding */
+            margin-top: 60px; /* Height of the fixed header */
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .service-item h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .service-item ul {
+            list-style: disc;
+            margin-left: 20px;
+            font-size: 0.95rem;
+        }
+
+        .service-item ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .contact-link {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: #0056b3; /* Darker shade on hover */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+
+            header h1 {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            nav ul {
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            #hero h1 {
+                font-size: 2rem;
+            }
+             #hero p {
+                font-size: 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr; /* Stack services on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>[YOUR NAME AND SURNAME]</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>[YOUR NAME AND SURNAME]</h1>
+            <p>Senior-Level Real Estate & Real Estate Debt Specialist</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>ABOUT ME</h2>
+            <p>Leveraging over a decade of senior-level experience in Real Estate and Real Estate Debt, I specialise in executing complex transactions (exceeding $1B+), deploying institutional-grade financial products, and advising C-suite stakeholders. Expert in complex deal structuring, strategy, and financial modelling in Fortune 500 asset management, private equity, and banking environments.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>SERVICES</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Comprehensive Transaction Leadership</h3>
+                    <p>Proven success in leading high-value transactions across the full spectrum of real estate capital structures, including:</p>
+                    <ul>
+                        <li>Equity & Debt (Senior, Mezzanine, Bridge, Construction Finance)</li>
+                        <li>Joint Ventures & Structured Equity</li>
+                        <li>Real Estate Development Projects</li>
+                        <li>Distressed Debt & Loan Workouts</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Advanced Financial Modelling</h3>
+                    <p>Expertise in developing highly sophisticated Excel-based financial models for real estate debt and equity transactions, incorporating waterfall analyses, property-level cash flow projections, and debt service coverage models.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Credit Risk & Underwriting</h3>
+                    <p>Skilled in assessing credit risk, performing rigorous underwriting for diverse property types (commercial, residential, industrial, hospitality), and analyzing complex loan covenants.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Investor Relations & Capital Raising</h3>
+                    <p>Adept at preparing compelling pitch decks and RFP materials, identifying market opportunities, and clearly communicating complex investment strategies and performance to sophisticated institutional investors and clients (including pension funds, insurance companies, endowments, sovereign wealth and other capital sources).</p>
+                </div>
+                <div class="service-item">
+                    <h3>Business Development</h3>
+                    <p>Proven ability to establish new lending networks and originate high-value deals in key European markets, notably Iberia and the Nordics.</p>
+                </div>
+                <div class="service-item">
+                    <h3>ESG Integration</h3>
+                    <p>Experienced in integrating ESG (Environmental, Social, and Governance) criteria into investment strategies and designing institutional-grade, ESG-compliant financial products.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Team Building & Development</h3>
+                    <p>Successfully recruited and trained Analyst classes, developing their skills in deal readiness, financial modelling, and transaction structuring.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>CONTACT</h2>
+            <p>I am available for consultation and advisory engagements, strategic partnerships, and discussions on future entrepreneurial ventures.</p>
+            <a href="[Link to my LinkedIn Profile]" target="_blank" class="contact-link">Connect on LinkedIn</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> [YOUR NAME AND SURNAME]. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
