@@ -17,7 +17,7 @@
             line-height: 1.7;
             color: #525f7f;
             background-color: #f8f9fa;
-            scroll-behavior: smooth;
+            /* scroll-behavior: smooth; has no effect without nav links, but harmless to keep */
         }
 
         .container {
@@ -25,54 +25,6 @@
             margin: auto;
             overflow: hidden;
             padding: 0 25px;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: #e9ecef;
-            color: #525f7f;
-            padding: 1rem 0; /* Default padding for desktop */
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 1.7rem; /* Default for desktop */
-            margin: 0;
-            font-weight: 600;
-            color: #495057;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-left: 25px; /* Default for desktop */
-        }
-
-        nav ul li a {
-            color: #525f7f;
-            text-decoration: none;
-            font-size: 1rem; /* Default for desktop */
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #a0c4ff; /* Pastel Blue accent */
         }
 
         /* Sections */
@@ -104,11 +56,11 @@
         }
 
         #hero {
-            background: #a0c4ff;
+            background: #a0c4ff; /* Pastel Blue accent for hero */
             color: #fff;
             text-align: center;
             padding: 70px 0 50px;
-            margin-top: 65px; /* Default for desktop, approx height of header */
+            /* Removed margin-top as the header is gone */
         }
 
         #hero h1 {
@@ -133,76 +85,107 @@
             margin-right: auto;
         }
 
-        /* Services Section (styles remain the same) */
+        /* Services Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 35px;
         }
+
         .service-item {
-            background: #ffffff; padding: 30px; border-radius: 10px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.07);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex; flex-direction: column; min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            min-height: 220px;
         }
-        .service-item:hover { transform: translateY(-7px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .service-item h3 { color: #a0c4ff; margin-bottom: 15px; font-size: 1.4rem; font-weight: 600; }
-        .service-item p, .service-item ul { font-size: 1rem; margin-bottom: 10px; flex-grow: 1; }
-        .service-item ul { list-style: disc; margin-left: 20px; padding-left: 5px; }
-        .service-item ul li { margin-bottom: 8px; }
-        #service-comprehensive { grid-column: 1 / -1; min-height: auto; }
-        #service-comprehensive ul { margin-top: 10px; }
 
-        /* Contact Section (styles remain the same) */
-        #contact { text-align: center; }
-        #contact p { font-size: 1.15rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .service-item:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-item h3 {
+            color: #a0c4ff; /* Pastel Blue accent for service titles */
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .service-item p, .service-item ul {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            flex-grow: 1;
+        }
+
+        .service-item ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 5px;
+        }
+
+        .service-item ul li {
+            margin-bottom: 8px;
+        }
+
+        #service-comprehensive {
+            grid-column: 1 / -1;
+            min-height: auto;
+        }
+
+        #service-comprehensive ul {
+            margin-top: 10px;
+        }
+
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .contact-link {
-            display: inline-block; background: #a0c4ff; color: #fff; padding: 14px 30px;
-            text-decoration: none; border-radius: 8px; font-size: 1.1rem; font-weight: 500;
+            display: inline-block;
+            background: #a0c4ff; /* Pastel Blue accent */
+            color: #fff;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 500;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        .contact-link:hover { background: #8cb3f2; transform: translateY(-2px); }
 
-        /* Footer (styles remain the same) */
+        .contact-link:hover {
+            background: #8cb3f2; /* Darker pastel blue on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
         footer {
-            text-align: center; padding: 25px 0; background: #dee2e6;
-            color: #525f7f; font-size: 0.9rem; border-top: 1px solid #ced4da;
+            text-align: center;
+            padding: 25px 0;
+            background: #dee2e6;
+            color: #525f7f;
+            font-size: 0.9rem;
+            border-top: 1px solid #ced4da;
         }
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
-            header {
-                padding: 0.8rem 0; /* Slightly reduced padding */
-            }
-            header .container {
-                flex-direction: column;
-                align-items: center; /* Center items when stacked */
-            }
-            header h1 {
-                font-size: 1.3rem; /* Reduced font size for name */
-                margin-bottom: 8px; /* Reduced margin for tighter packing */
-                text-align: center;
-            }
-            nav ul {
-                text-align: center;
-                padding-top: 5px; /* Add a little space above nav if name is short */
-            }
-            nav ul li {
-                margin: 0 10px; /* Adjust horizontal spacing for links */
-            }
-            nav ul li a {
-                font-size: 0.95rem; /* Slightly reduced nav link font */
-            }
-
-            /* Estimate header height for 768px:
-               Padding: ~13px top/bottom = 26px
-               H1: font ~21px + margin-bottom 8px = 29px
-               Nav: font ~15px (line height ~20px)
-               Total ~ 26 + 29 + 20 = 75px
-            */
             #hero {
                 padding: 60px 0 40px;
-                margin-top: 75px; /* Adjusted for new header height */
+                /* Removed margin-top */
             }
             #hero h1 { font-size: 2.2rem; }
             #hero p { font-size: 1.05rem; }
@@ -211,40 +194,9 @@
         }
 
         @media (max-width: 480px) {
-            header {
-                padding: 0.6rem 0; /* Further reduced padding for very small screens */
-            }
-            header h1 {
-                font-size: 1.2rem; /* Further reduced font size for name */
-                margin-bottom: 6px; /* Further reduced margin */
-            }
-            nav ul li {
-                display: block;
-                margin: 8px 0; /* Adjust vertical spacing for stacked links */
-            }
-            nav ul li a {
-                font-size: 0.9rem; /* Further reduced nav link font */
-            }
-
-            /* Estimate header height for 480px:
-               Padding: ~10px top/bottom = 20px
-               H1: font ~19px + margin-bottom 6px = 25px
-               Nav: 3 links * (font ~14px + margin 8px*2=16px) = 3 * 30px = 90px (if 3 links)
-               Total ~ 20 + 25 + 90 = 135px. (This seems tall, but display:block makes nav take space)
-               Let's assume a more compact nav on small screens if possible, or accept this height.
-               If nav links are short, it might be less. Let's aim for a safe margin-top.
-            */
             #hero {
-                /*
-                Approximate header height:
-                Header padding: 0.6rem * 2 = ~20px
-                H1 (font 1.2rem ~19px + margin-bottom 6px): ~25px
-                Nav items (font 0.9rem ~14px + margin 8px*2=16px per item):
-                  Assuming 3 nav items: 3 * (14px + 16px) = 3 * 30px = 90px
-                Total estimated header height: 20px + 25px + 90px = 135px
-                */
-                margin-top: 135px; /* Adjusted for new header height */
                 padding: 50px 0 30px;
+                /* Removed margin-top */
             }
             #hero h1 { font-size: 2rem; }
             #hero p { font-size: 1rem; }
@@ -252,19 +204,6 @@
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="container">
-            <h1>KAROLINA WÓJTOWICZ</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
     <section id="hero">
         <div class="container">
@@ -288,7 +227,7 @@
                     <h3>Comprehensive Transaction Leadership</h3>
                     <p>Proven success in leading high-value transactions across the full spectrum of real estate capital structures, including:</p>
                     <ul>
-                        <li>Equity & Debt (Senior, Mezzanine, Bridge, Construction Finance)</li>
+                        <li>Real Estate Equity & Debt (Senior, Mezzanine, Bridge, Construction Finance)</li>
                         <li>Joint Ventures & Structured Equity</li>
                         <li>Real Estate Development Projects</li>
                         <li>Distressed Debt & Loan Workouts</li>
